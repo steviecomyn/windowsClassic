@@ -1,0 +1,219 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+:root {
+    /* Color Palette */
+    --win95-cyan: #008080;
+    --win95-grey: #C0C0C0;
+    --win95-grey-highlight: #E4E4E4;
+    --win95-grey-shadow: #A0A0A0;
+    --win95-blue-highlight: #010080;
+
+    --win98-darkblue: #010489;
+    --win98-lightblue: #0e84ca;
+}
+
+.content::-webkit-scrollbar-track {
+	background-color: var(--win95-grey-highlight);
+}
+
+.content::-webkit-scrollbar {
+	width: 18px;
+	background-color: var(--win95-grey-highlight);
+}
+
+.content::-webkit-scrollbar-thumb {
+	background-color:var(--win95-grey);
+    border-top: 2px solid var(--win95-grey-highlight);
+    border-left: 2px solid var(--win95-grey-highlight);
+    border-right: 2px solid var(--win95-grey-shadow);
+    border-bottom: 2px solid var(--win95-grey-shadow);
+}
+
+.content::-webkit-scrollbar-button {
+	background-color:var(--win95-grey);
+    height: 18px;
+    width: 18px;
+    border-top: 2px solid var(--win95-grey-highlight);
+    border-left: 2px solid var(--win95-grey-highlight);
+    border-right: 2px solid var(--win95-grey-shadow);
+    border-bottom: 2px solid var(--win95-grey-shadow);
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url(https://dl.dropboxusercontent.com/u/55165267/icon3.png);
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url(https://dl.dropboxusercontent.com/u/55165267/icon.png);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  
+}
+
+body {
+    background-color: var(--win95-cyan);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.effect3dOut {
+    border-top: 2px solid var(--win95-grey-highlight);
+    border-left: 2px solid var(--win95-grey-highlight);
+    border-right: 2px solid var(--win95-grey-shadow);
+    border-bottom: 2px solid var(--win95-grey-shadow);
+}
+
+.effect3dIn {
+    border-top: 2px solid var(--win95-grey-shadow);
+    border-left: 2px solid var(--win95-grey-shadow);
+    border-right: 2px solid var(--win95-grey-highlight);
+    border-bottom: 2px solid var(--win95-grey-highlight);
+}
+
+#taskBar {
+    background-color: var(--win95-grey);
+    border-top: 2px solid var(--win95-grey-highlight);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    display: flex;
+}
+
+#startButton {
+    background-color: var(--win95-grey);
+    color: #020202;
+    margin: 0.2rem;
+    padding: 0rem 0.4rem;
+    /* width: 80px; */
+    display: flex;
+    vertical-align: middle; 
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#windowButton {
+    background-color: var(--win95-grey);
+    color: #020202;
+    margin: 0.2rem;
+    padding: 0.2rem 0.4rem;
+    width: 140px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#startMenu {
+    position: absolute;
+    bottom: 42px;
+    background-color: var(--win95-grey);
+    min-width: 280px;
+    z-index: 2;
+    display: flex;
+}
+
+#startMenuBanner {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, var(--win98-darkblue), var(--win98-lightblue));
+    color: #fff;
+    writing-mode: vertical-rl;
+    line-height: 1rem;
+    font-size: 2rem;
+    transform: rotate(180deg);
+    padding:0.4rem;
+
+}
+
+#startMenuItems {
+    list-style: none;
+    width: 100%;
+}
+
+#startMenuItems li a {
+    text-decoration: none;
+    color: #020202;
+    display: block;
+    padding: 0.6rem;
+    padding-left: 1rem;
+}
+
+#startMenuItems li a:hover {
+    background-color: var(--win95-blue-highlight);
+    color: #fff;
+    transition: 0.2s;
+}
+
+#systemTray {
+    margin: 0.2rem;
+    margin-left: auto;
+}
+
+#clock {
+    font-weight: bold;
+    vertical-align: middle; 
+    margin: 0rem 0.6rem;
+}
+
+.startMenuClosed {
+    display: none;
+}
+
+.startMenuOpen {
+    display: block;
+}
+
+#contentWindow {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: var(--win95-grey);
+    margin: 1rem;
+    width: 70vw;
+    min-height: 60vh;
+    z-index: -1;
+}
+
+#contentWindowHeader {
+    background-color: var(--win95-blue-highlight);
+    background: linear-gradient(90deg, var(--win98-darkblue), var(--win98-lightblue));
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+    padding: 2px;
+    height: 24px;
+}
+
+.titleBarButtonGroup {
+    margin-top: -23px;
+    float: right;
+}
+
+.titleBarButton {
+    background-color: var(--win95-grey);
+    width: 12px;
+    padding: 4px;
+    margin: 1px;
+    float: left;
+}
+
+#contentWindowMenuBar {
+    background-color: var(--win95-grey);
+    color: #000;
+    padding: 0.2em 0.6em;
+}
+
+.content {
+    background-color: #fff;
+    overflow-y: scroll;
+    height: 500px;
+    padding: 1em;
+    min-height: 500px;
+    margin: 2px;
+}
