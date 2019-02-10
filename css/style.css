@@ -12,6 +12,8 @@
     --win98-lightblue: #0e84ca;
 }
 
+/* Custom Retro Scrollbars. */
+
 .content::-webkit-scrollbar-track {
 	background-color: var(--win95-grey-highlight);
 }
@@ -46,6 +48,8 @@
 ::-webkit-scrollbar-button:vertical:decrement {
     background-image: url(https://dl.dropboxusercontent.com/u/55165267/icon.png);
 }
+
+/* Basic Reset */
 
 * {
     padding: 0;
