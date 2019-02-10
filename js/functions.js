@@ -4,15 +4,21 @@ $(document).ready(function () {
     // set's the clock.
     setInterval(updateClock, 1000);
 
+    // Hides start menu on load.
     $('#startMenu').hide();
     
+    // Show Menu when button is clicked.
     $('#startButton').click(function(){
         $('#startMenu').toggle();
+        // Creates the Indentation effect on click.
+        $('#startButton').toggleClass('effect3dIn');
     });
     // hide's start menu once menu item is selected.
     $('#startMenuItems li a').click(function(e){
         $('#startMenu').hide();
     });
+
+
 
 });
 
