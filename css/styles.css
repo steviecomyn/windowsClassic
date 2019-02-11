@@ -1,1 +1,108 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body {
+  background-color: #008080;
+  font-family: 'Open Sans', sans-serif; }
 
+.effect3dOut {
+  border-top: 2px solid #E4E4E4;
+  border-left: 2px solid #E4E4E4;
+  border-right: 2px solid #A0A0A0;
+  border-bottom: 2px solid #A0A0A0; }
+
+.effect3dIn {
+  border-top: 2px solid #A0A0A0;
+  border-left: 2px solid #A0A0A0;
+  border-right: 2px solid #E4E4E4;
+  border-bottom: 2px solid #E4E4E4; }
+
+#taskBar {
+  background-color: #C0C0C0;
+  border-top: 2px solid #E4E4E4;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  display: flex;
+  align-items: center; }
+  #taskBar a {
+    text-decoration: none; }
+  #taskBar #startButton {
+    display: flex;
+    align-items: center;
+    margin: 0.2rem;
+    padding: 0.2rem 0.4rem;
+    color: #020202;
+    font-weight: bold; }
+    #taskBar #startButton img {
+      padding-right: 6px; }
+  #taskBar #windowButton {
+    display: flex;
+    align-items: center;
+    margin: 0.2rem;
+    padding: 0.2rem 0.4rem;
+    max-width: 140px; }
+  #taskBar #systemTray {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0.4rem; }
+    #taskBar #systemTray #clock {
+      padding: 0.2rem 0.4rem; }
+
+#startMenu {
+  position: absolute;
+  bottom: 42px;
+  background-color: #C0C0C0;
+  min-width: 280px;
+  z-index: 2;
+  display: flex; }
+  #startMenu #startMenuItems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+    #startMenu #startMenuItems li a {
+      display: block;
+      padding: 0.6rem;
+      color: #020202; }
+      #startMenu #startMenuItems li a:hover {
+        background-color: #010080;
+        color: #fff;
+        transition: 0.2s; }
+
+#startMenuBanner {
+  background-color: #010489;
+  background: linear-gradient(180deg, #010489, #0e84ca);
+  padding: 0.4rem;
+  padding-bottom: 60px;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  margin: 0;
+  color: #fff;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); }
+
+#contentWindow {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #C0C0C0;
+  width: 70vw;
+  min-height: 60vh;
+  z-index: -1; }
+
+#contentWindowHeader {
+  background-color: #010489;
+  background: linear-gradient(90deg, #010489, #0e84ca);
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  padding: 2px;
+  height: 24px;
+  display: flex; }
+  #contentWindowHeader #titleBarButtonGroup img {
+    background-color: #C0C0C0; }
+
+/*# sourceMappingURL=styles.css.map */

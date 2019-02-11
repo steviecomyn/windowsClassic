@@ -1,1 +1,138 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import 'colors';
 
+body {
+  background-color: $win95-cyan;
+  font-family: 'Open Sans', sans-serif;
+  // box-sizing: border-box;
+}
+
+.effect3dOut {
+  border-top: 2px solid $win95-grey-highlight;
+  border-left: 2px solid $win95-grey-highlight;
+  border-right: 2px solid $win95-grey-shadow;
+  border-bottom: 2px solid $win95-grey-shadow;
+}
+
+.effect3dIn {
+  border-top: 2px solid $win95-grey-shadow;
+  border-left: 2px solid $win95-grey-shadow;
+  border-right: 2px solid $win95-grey-highlight;
+  border-bottom: 2px solid $win95-grey-highlight;
+}
+
+#taskBar {
+  background-color: $win95-grey;
+  border-top: 2px solid $win95-grey-highlight;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  #startButton {
+    display: flex;
+    align-items: center;
+    margin: 0.2rem;
+    padding: 0.2rem 0.4rem;
+    color: #020202;
+    font-weight: bold;
+    img {
+      padding-right: 6px;
+    }
+  }
+
+  #windowButton {
+    display: flex;
+    align-items: center;
+    margin: 0.2rem;
+    padding: 0.2rem 0.4rem;
+    max-width: 140px;
+  }
+
+  #systemTray {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0.4rem;
+
+    #clock {
+      padding: 0.2rem 0.4rem;
+    }
+  }
+}
+
+#startMenu {
+  position: absolute;
+  bottom: 42px;
+  background-color: $win95-grey;
+  min-width: 280px;
+  z-index: 2;
+  display: flex;
+
+  #startMenuItems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    li a {
+      display: block;
+      padding: 0.6rem;
+      color: #020202;
+
+      &:hover {
+        background-color: $win95-blue-highlight;
+        color: #fff;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+#startMenuBanner {
+  background-color: $win98-darkblue;
+  background: linear-gradient(180deg, $win98-darkblue, $win98-lightblue);
+  padding: 0.4rem;
+  padding-bottom: 60px;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  margin: 0;
+  color: #fff;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+#contentWindow {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: $win95-grey;
+  width: 70vw;
+  min-height: 60vh;
+  z-index: -1;
+}
+
+#contentWindowHeader {
+  background-color: $win98-darkblue;
+  background: linear-gradient(90deg, $win98-darkblue, $win98-lightblue);
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  padding: 2px;
+  height: 24px;
+  display: flex;
+  #titleBarButtonGroup {
+
+    img {
+      background-color: $win95-grey;
+    }
+  }
+}  

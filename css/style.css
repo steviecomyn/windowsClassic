@@ -141,7 +141,7 @@ body {
 }
 
 #startMenuItems li a {
-    text-decoration: none;
+    
     color: #020202;
     display: block;
     padding: 0.6rem;
@@ -165,13 +165,6 @@ body {
     margin: 0rem 0.6rem;
 }
 
-.startMenuClosed {
-    display: none;
-}
-
-.startMenuOpen {
-    display: block;
-}
 
 #contentWindow {
     position: fixed;
@@ -194,7 +187,7 @@ body {
     height: 24px;
 }
 
-.titleBarButtonGroup {
+#titleBarButtonGroup {
     margin-top: -23px;
     float: right;
 }
