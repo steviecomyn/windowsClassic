@@ -16,6 +16,7 @@ $(document).ready(function () {
     // hide's start menu once menu item is selected.
     $('#startMenuItems li a').click(function(e){
         $('#startMenu').hide();
+        $('#startButton').toggleClass('effect3dIn');
     });
 
 
