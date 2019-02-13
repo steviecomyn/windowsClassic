@@ -5,7 +5,7 @@
 body {
   background-color: $win95-cyan;
   font-family: 'Open Sans', sans-serif;
-  // box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .effect3dOut {
@@ -127,12 +127,64 @@ body {
   font-weight: bold;
   text-align: left;
   padding: 2px;
-  height: 24px;
+  height: 18px;
   display: flex;
+  align-items: center;
   #titleBarButtonGroup {
-
-    img {
-      background-color: $win95-grey;
-    }
+    margin-left: auto;
   }
-}  
+}
+
+#titleBarButtonGroup .titleBarButtons {
+  background-color: $win95-grey;
+}
+
+.content {
+  background-color: #fff;
+  overflow-y: scroll;
+  height: 500px;
+  padding: 1em;
+  min-height: 500px;
+  margin: 2px;
+}
+
+/* Custom Retro Scrollbars. */
+
+.content::-webkit-scrollbar-track {
+	background-color: $win95-grey-highlight;
+}
+
+.content::-webkit-scrollbar {
+	width: 18px;
+	background-color: $win95-grey-highlight;
+}
+
+.content::-webkit-scrollbar-thumb {
+	  background-color:$win95-grey;
+    border-top: 2px solid $win95-grey-highlight;
+    border-left: 2px solid $win95-grey-highlight;
+    border-right: 2px solid $win95-grey-shadow;
+    border-bottom: 2px solid $win95-grey-shadow;
+}
+
+.content::-webkit-scrollbar-button {
+	background-color:$win95-grey;
+    height: 18px;
+    width: 18px;
+    border-top: 2px solid $win95-grey-highlight;
+    border-left: 2px solid $win95-grey-highlight;
+    border-right: 2px solid $win95-grey-shadow;
+    border-bottom: 2px solid $win95-grey-shadow;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url(../img/arrow-down.png);
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url(../img/arrow-up.png);
+    background-repeat: no-repeat;
+    background-position: center; 
+}
