@@ -5,6 +5,18 @@ body {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box; }
 
+#taskBar #windowButton, #startMenu, #contentWindow, #contentWindowTitleBar #titleBarButtonGroup li {
+  border-top: 2px solid #E4E4E4;
+  border-left: 2px solid #E4E4E4;
+  border-right: 2px solid #A0A0A0;
+  border-bottom: 2px solid #A0A0A0; }
+
+#taskBar #systemTray, .content, #contentWindowStatusBar {
+  border-top: 2px solid #A0A0A0;
+  border-left: 2px solid #A0A0A0;
+  border-right: 2px solid #E4E4E4;
+  border-bottom: 2px solid #E4E4E4; }
+
 .effect3dOut {
   border-top: 2px solid #E4E4E4;
   border-left: 2px solid #E4E4E4;
@@ -85,38 +97,57 @@ body {
   transform: rotate(180deg); }
 
 #contentWindow {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+  position: relative;
   background-color: #C0C0C0;
   width: 70vw;
-  min-height: 60vh;
+  margin: 2em auto;
   z-index: -1; }
 
-#contentWindowHeader {
+#contentWindowTitleBar {
   background-color: #010489;
   background: linear-gradient(90deg, #010489, #0e84ca);
   margin: 0;
+  padding: 2px;
   color: #fff;
   font-weight: bold;
-  text-align: left;
-  padding: 2px;
-  height: 18px;
+  height: 20px;
   display: flex;
   align-items: center; }
-  #contentWindowHeader #titleBarButtonGroup {
-    margin-left: auto; }
+  #contentWindowTitleBar #windowIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px; }
+  #contentWindowTitleBar #windowTitle {
+    flex-grow: 1; }
+  #contentWindowTitleBar #titleBarButtonGroup {
+    display: flex;
+    list-style: none; }
+    #contentWindowTitleBar #titleBarButtonGroup li {
+      background-color: #C0C0C0;
+      width: 16px;
+      height: 16px; }
 
-#titleBarButtonGroup .titleBarButtons {
-  background-color: #C0C0C0; }
+#contentWindowMenuBar {
+  margin: 4px;
+  padding: 0;
+  display: flex;
+  list-style: none; }
+  #contentWindowMenuBar li {
+    padding: 0px 4px; }
+  #contentWindowMenuBar li::first-letter {
+    text-decoration: underline; }
 
 .content {
   background-color: #fff;
   overflow-y: scroll;
-  height: 500px;
+  max-height: 70vh;
   padding: 1em;
-  min-height: 500px;
   margin: 2px; }
+
+#contentWindowStatusBar {
+  font-size: 0.8em;
+  padding: 2px;
+  padding-left: 6px; }
 
 /* Custom Retro Scrollbars. */
 .content::-webkit-scrollbar-track {

@@ -8,6 +8,24 @@ body {
   box-sizing: border-box;
 }
 
+// EXTENDS ================================================================================================================= //
+
+%effect3dOut {
+  border-top: 2px solid $win95-grey-highlight;
+  border-left: 2px solid $win95-grey-highlight;
+  border-right: 2px solid $win95-grey-shadow;
+  border-bottom: 2px solid $win95-grey-shadow;
+}
+
+%effect3dIn {
+  border-top: 2px solid $win95-grey-shadow;
+  border-left: 2px solid $win95-grey-shadow;
+  border-right: 2px solid $win95-grey-highlight;
+  border-bottom: 2px solid $win95-grey-highlight;
+}
+
+// VARIABLES ================================================================================================================= //
+
 .effect3dOut {
   border-top: 2px solid $win95-grey-highlight;
   border-left: 2px solid $win95-grey-highlight;
@@ -21,6 +39,8 @@ body {
   border-right: 2px solid $win95-grey-highlight;
   border-bottom: 2px solid $win95-grey-highlight;
 }
+
+// TASKBAR ================================================================================================================= //
 
 #taskBar {
   background-color: $win95-grey;
@@ -54,6 +74,7 @@ body {
     margin: 0.2rem;
     padding: 0.2rem 0.4rem;
     max-width: 140px;
+    @extend %effect3dOut;
   }
 
   #systemTray {
@@ -61,14 +82,17 @@ body {
     align-items: center;
     margin-left: auto;
     margin-right: 0.4rem;
-
+    @extend %effect3dIn;
     #clock {
       padding: 0.2rem 0.4rem;
     }
   }
 }
 
+// START MENU ================================================================================================================= //
+
 #startMenu {
+  @extend %effect3dOut;
   position: absolute;
   bottom: 42px;
   background-color: $win95-grey;
@@ -109,43 +133,76 @@ body {
   transform: rotate(180deg);
 }
 
+// WINDOW ================================================================================================================= //
+
 #contentWindow {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+  // position: fixed;
+  // top: 1rem;
+  // right: 1rem;
+  position: relative;
   background-color: $win95-grey;
   width: 70vw;
-  min-height: 60vh;
+  margin: 2em auto;
   z-index: -1;
+  @extend %effect3dOut;
 }
 
-#contentWindowHeader {
+#contentWindowTitleBar {
   background-color: $win98-darkblue;
   background: linear-gradient(90deg, $win98-darkblue, $win98-lightblue);
   margin: 0;
+  padding: 2px;
   color: #fff;
   font-weight: bold;
-  text-align: left;
-  padding: 2px;
-  height: 18px;
+  height: 20px;
   display: flex;
   align-items: center;
+  #windowIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  #windowTitle {
+    flex-grow: 1;
+  }
   #titleBarButtonGroup {
-    margin-left: auto;
+    display: flex;
+    list-style: none;
+    li {
+      @extend %effect3dOut;
+      background-color: $win95-grey;
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 
-#titleBarButtonGroup .titleBarButtons {
-  background-color: $win95-grey;
+#contentWindowMenuBar {
+  margin: 4px;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  li {
+    padding: 0px 4px;
+  }
+  li::first-letter {
+    text-decoration: underline;
+  }
 }
-
 .content {
+  @extend %effect3dIn;
   background-color: #fff;
   overflow-y: scroll;
-  height: 500px;
+  max-height: 70vh;
   padding: 1em;
-  min-height: 500px;
   margin: 2px;
+}
+
+#contentWindowStatusBar {
+  @extend %effect3dIn;
+  font-size: 0.8em;
+  padding: 2px;
+  padding-left: 6px;
 }
 
 /* Custom Retro Scrollbars. */
