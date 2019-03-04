@@ -103,7 +103,8 @@ body {
     align-items: center;
     margin: 0.2rem;
     padding: 0.2rem 0.4rem;
-    max-width: 140px; }
+    max-width: 140px;
+    color: #020202; }
   #taskBar #systemTray {
     display: flex;
     align-items: center;
