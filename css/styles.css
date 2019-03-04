@@ -5,7 +5,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box; }
 
-#taskBar #windowButton, #startMenu, #contentWindow, #contentWindowTitleBar #titleBarButtonGroup li {
+#taskBar #windowButton, #startMenu, #contentWindowTitleBar #titleBarButtonGroup li {
   border-top: 2px solid #E4E4E4;
   border-left: 2px solid #E4E4E4;
   border-right: 2px solid #A0A0A0;
@@ -97,11 +97,16 @@ body {
   transform: rotate(180deg); }
 
 #contentWindow {
-  position: relative;
+  width: 100vw;
   background-color: #C0C0C0;
-  width: 70vw;
-  margin: 2em auto;
+  height: calc(100vh - 42px);
   z-index: -1; }
+  @media only screen and (min-width: 640px) {
+    #contentWindow {
+      position: relative;
+      margin: 2em auto;
+      width: 70vw;
+      height: inherit; } }
 
 #contentWindowTitleBar {
   background-color: #010489;
@@ -140,16 +145,23 @@ body {
 .content {
   background-color: #fff;
   overflow-y: scroll;
-  max-height: 70vh;
   padding: 1em;
-  margin: 2px; }
+  margin: 2px;
+  height: calc(100vh - 130px); }
+  @media only screen and (min-width: 640px) {
+    .content {
+      max-height: 70vh;
+      overflow-y: scroll; } }
 
 #contentWindowStatusBar {
   font-size: 0.8em;
   padding: 2px;
-  padding-left: 6px; }
+  padding-left: 6px;
+  display: none; }
+  @media only screen and (min-width: 640px) {
+    #contentWindowStatusBar {
+      display: block; } }
 
-/* Custom Retro Scrollbars. */
 .content::-webkit-scrollbar-track {
   background-color: #E4E4E4; }
 

@@ -136,15 +136,16 @@ body {
 // WINDOW ================================================================================================================= //
 
 #contentWindow {
-  // position: fixed;
-  // top: 1rem;
-  // right: 1rem;
-  position: relative;
+  width: 100vw;
   background-color: $win95-grey;
-  width: 70vw;
-  margin: 2em auto;
+  height: calc(100vh - 42px);
   z-index: -1;
-  @extend %effect3dOut;
+  @media only screen and (min-width: 640px) {
+    position: relative;
+    margin: 2em auto;
+    width: 70vw;
+    height: inherit;
+	}
 }
 
 #contentWindowTitleBar {
@@ -193,9 +194,13 @@ body {
   @extend %effect3dIn;
   background-color: #fff;
   overflow-y: scroll;
-  max-height: 70vh;
   padding: 1em;
   margin: 2px;
+  height: calc(100vh - 130px);
+  @media only screen and (min-width: 640px) {
+    max-height: 70vh;
+    overflow-y: scroll;
+	}
 }
 
 #contentWindowStatusBar {
@@ -203,9 +208,13 @@ body {
   font-size: 0.8em;
   padding: 2px;
   padding-left: 6px;
+  display: none;
+  @media only screen and (min-width: 640px) {
+    display: block;
+  }
 }
 
-/* Custom Retro Scrollbars. */
+// RETRO SCROLLBARS ================================================================================================================= //
 
 .content::-webkit-scrollbar-track {
 	background-color: $win95-grey-highlight;
