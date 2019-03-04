@@ -6,6 +6,7 @@ body {
   background-color: $win95-cyan;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 // EXTENDS ================================================================================================================= //
@@ -59,6 +60,8 @@ body {
   }
 }
 
+
+
 #myComputerIcon {
   top: 1em;
 }
@@ -67,9 +70,7 @@ body {
   top: calc(1em + 120px);
 }
 
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
+.startUpScreen {
 	position: fixed;
 	left: 0px;
 	top: 0px;

@@ -3,7 +3,8 @@
 body {
   background-color: #008080;
   font-family: 'Open Sans', sans-serif;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow: hidden; }
 
 #taskBar #windowButton, #startMenu, #contentWindowTitleBar #titleBarButtonGroup li {
   border-top: 2px solid #E4E4E4;
@@ -49,16 +50,7 @@ body {
 #recycleBinIcon {
   top: calc(1em + 120px); }
 
-.no-js #loader {
-  display: none; }
-
-.js #loader {
-  display: block;
-  position: absolute;
-  left: 100px;
-  top: 0; }
-
-.se-pre-con {
+.startUpScreen {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -70,11 +62,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
-  .se-pre-con img {
+  .startUpScreen img {
     width: 100%;
     height: auto; }
     @media only screen and (min-width: 640px) {
-      .se-pre-con img {
+      .startUpScreen img {
         width: 60vw;
         height: auto; } }
 

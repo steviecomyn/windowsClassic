@@ -1,6 +1,6 @@
 setTimeout(function(){
-    $(".se-pre-con").fadeOut("slow");
-}, 3000);
+    $(".startUpScreen").fadeOut("slow");
+}, 2000);
 
 $(document).ready(function () {
 
