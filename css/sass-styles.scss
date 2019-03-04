@@ -40,6 +40,57 @@ body {
   border-bottom: 2px solid $win95-grey-highlight;
 }
 
+// DESKTOP ================================================================================================================= //
+
+.desktopIcon {
+  width: 120px;
+  height: 100px;
+  position: fixed;
+  // top: 1em;
+  left: 1em;
+  z-index: -2;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  span {
+    display: block;
+    color: #fff;
+    margin-top: 4px;
+  }
+}
+
+#myComputerIcon {
+  top: 1em;
+}
+
+#recycleBinIcon {
+  top: calc(1em + 120px);
+}
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+  background: url(../img/startupBackground.png) center no-repeat #7BB5DE;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    height: auto;
+    @media only screen and (min-width: 640px) {
+      width: 60vw;
+      height: auto;
+    }
+  }
+}
+
 // TASKBAR ================================================================================================================= //
 
 #taskBar {
@@ -141,10 +192,13 @@ body {
   height: calc(100vh - 42px);
   z-index: -1;
   @media only screen and (min-width: 640px) {
-    position: relative;
     margin: 2em auto;
     width: 70vw;
     height: inherit;
+    border-top: 2px solid $win95-grey-highlight;
+    border-left: 2px solid $win95-grey-highlight;
+    border-right: 2px solid $win95-grey-shadow;
+    border-bottom: 2px solid $win95-grey-shadow;
 	}
 }
 
@@ -178,6 +232,22 @@ body {
   }
 }
 
+#windowMinimise {
+  background: url(../img/uiElements/minimise.png) center no-repeat;
+}
+
+#windowMaximise {
+  background: url(../img/uiElements/maximise.png) center no-repeat;
+}
+
+#windowClose {
+  background: url(../img/uiElements/close.png) center no-repeat;
+}
+
+.windowRestore {
+  background: url(../img/uiElements/restore.png) center no-repeat $win95-grey !important;
+}
+
 #contentWindowMenuBar {
   margin: 4px;
   padding: 0;
@@ -190,7 +260,7 @@ body {
     text-decoration: underline;
   }
 }
-.content {
+#content {
   @extend %effect3dIn;
   background-color: #fff;
   overflow-y: scroll;
@@ -198,6 +268,7 @@ body {
   margin: 2px;
   height: calc(100vh - 130px);
   @media only screen and (min-width: 640px) {
+    padding: 1em 3em;
     max-height: 70vh;
     overflow-y: scroll;
 	}
@@ -216,16 +287,16 @@ body {
 
 // RETRO SCROLLBARS ================================================================================================================= //
 
-.content::-webkit-scrollbar-track {
+#content::-webkit-scrollbar-track {
 	background-color: $win95-grey-highlight;
 }
 
-.content::-webkit-scrollbar {
+#content::-webkit-scrollbar {
 	width: 18px;
 	background-color: $win95-grey-highlight;
 }
 
-.content::-webkit-scrollbar-thumb {
+#content::-webkit-scrollbar-thumb {
 	  background-color:$win95-grey;
     border-top: 2px solid $win95-grey-highlight;
     border-left: 2px solid $win95-grey-highlight;
@@ -233,7 +304,7 @@ body {
     border-bottom: 2px solid $win95-grey-shadow;
 }
 
-.content::-webkit-scrollbar-button {
+#content::-webkit-scrollbar-button {
 	background-color:$win95-grey;
     height: 18px;
     width: 18px;
@@ -244,13 +315,29 @@ body {
 }
 
 ::-webkit-scrollbar-button:vertical:increment {
-    background-image: url(../img/arrow-down.png);
+    background-image: url(../img/uiElements/arrow-down.png);
     background-repeat: no-repeat;
     background-position: center; 
 }
 
 ::-webkit-scrollbar-button:vertical:decrement {
-    background-image: url(../img/arrow-up.png);
+    background-image: url(../img/uiElements/arrow-up.png);
     background-repeat: no-repeat;
     background-position: center; 
+}
+
+// This is for maximising the content window on click.
+
+.maximiseWindow {
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  width: 100vw !important;
+  height: calc(100vh - 42px) !important;
+  border: 0 !important;
+}
+
+.maximiseContent {
+  padding: 2rem 10rem !important;
+  max-height: calc(100vh - 160px) !important;
 }

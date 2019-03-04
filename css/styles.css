@@ -11,7 +11,7 @@ body {
   border-right: 2px solid #A0A0A0;
   border-bottom: 2px solid #A0A0A0; }
 
-#taskBar #systemTray, .content, #contentWindowStatusBar {
+#taskBar #systemTray, #content, #contentWindowStatusBar {
   border-top: 2px solid #A0A0A0;
   border-left: 2px solid #A0A0A0;
   border-right: 2px solid #E4E4E4;
@@ -28,6 +28,55 @@ body {
   border-left: 2px solid #A0A0A0;
   border-right: 2px solid #E4E4E4;
   border-bottom: 2px solid #E4E4E4; }
+
+.desktopIcon {
+  width: 120px;
+  height: 100px;
+  position: fixed;
+  left: 1em;
+  z-index: -2;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle; }
+  .desktopIcon span {
+    display: block;
+    color: #fff;
+    margin-top: 4px; }
+
+#myComputerIcon {
+  top: 1em; }
+
+#recycleBinIcon {
+  top: calc(1em + 120px); }
+
+.no-js #loader {
+  display: none; }
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0; }
+
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../img/startupBackground.png) center no-repeat #7BB5DE;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .se-pre-con img {
+    width: 100%;
+    height: auto; }
+    @media only screen and (min-width: 640px) {
+      .se-pre-con img {
+        width: 60vw;
+        height: auto; } }
 
 #taskBar {
   background-color: #C0C0C0;
@@ -103,10 +152,13 @@ body {
   z-index: -1; }
   @media only screen and (min-width: 640px) {
     #contentWindow {
-      position: relative;
       margin: 2em auto;
       width: 70vw;
-      height: inherit; } }
+      height: inherit;
+      border-top: 2px solid #E4E4E4;
+      border-left: 2px solid #E4E4E4;
+      border-right: 2px solid #A0A0A0;
+      border-bottom: 2px solid #A0A0A0; } }
 
 #contentWindowTitleBar {
   background-color: #010489;
@@ -132,6 +184,18 @@ body {
       width: 16px;
       height: 16px; }
 
+#windowMinimise {
+  background: url(../img/uiElements/minimise.png) center no-repeat; }
+
+#windowMaximise {
+  background: url(../img/uiElements/maximise.png) center no-repeat; }
+
+#windowClose {
+  background: url(../img/uiElements/close.png) center no-repeat; }
+
+.windowRestore {
+  background: url(../img/uiElements/restore.png) center no-repeat #C0C0C0 !important; }
+
 #contentWindowMenuBar {
   margin: 4px;
   padding: 0;
@@ -142,14 +206,15 @@ body {
   #contentWindowMenuBar li::first-letter {
     text-decoration: underline; }
 
-.content {
+#content {
   background-color: #fff;
   overflow-y: scroll;
   padding: 1em;
   margin: 2px;
   height: calc(100vh - 130px); }
   @media only screen and (min-width: 640px) {
-    .content {
+    #content {
+      padding: 1em 3em;
       max-height: 70vh;
       overflow-y: scroll; } }
 
@@ -162,21 +227,21 @@ body {
     #contentWindowStatusBar {
       display: block; } }
 
-.content::-webkit-scrollbar-track {
+#content::-webkit-scrollbar-track {
   background-color: #E4E4E4; }
 
-.content::-webkit-scrollbar {
+#content::-webkit-scrollbar {
   width: 18px;
   background-color: #E4E4E4; }
 
-.content::-webkit-scrollbar-thumb {
+#content::-webkit-scrollbar-thumb {
   background-color: #C0C0C0;
   border-top: 2px solid #E4E4E4;
   border-left: 2px solid #E4E4E4;
   border-right: 2px solid #A0A0A0;
   border-bottom: 2px solid #A0A0A0; }
 
-.content::-webkit-scrollbar-button {
+#content::-webkit-scrollbar-button {
   background-color: #C0C0C0;
   height: 18px;
   width: 18px;
@@ -186,13 +251,25 @@ body {
   border-bottom: 2px solid #A0A0A0; }
 
 ::-webkit-scrollbar-button:vertical:increment {
-  background-image: url(../img/arrow-down.png);
+  background-image: url(../img/uiElements/arrow-down.png);
   background-repeat: no-repeat;
   background-position: center; }
 
 ::-webkit-scrollbar-button:vertical:decrement {
-  background-image: url(../img/arrow-up.png);
+  background-image: url(../img/uiElements/arrow-up.png);
   background-repeat: no-repeat;
   background-position: center; }
+
+.maximiseWindow {
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  width: 100vw !important;
+  height: calc(100vh - 42px) !important;
+  border: 0 !important; }
+
+.maximiseContent {
+  padding: 2rem 10rem !important;
+  max-height: calc(100vh - 160px) !important; }
 
 /*# sourceMappingURL=styles.css.map */

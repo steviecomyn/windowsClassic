@@ -1,6 +1,9 @@
+setTimeout(function(){
+    $(".se-pre-con").fadeOut("slow");
+}, 3000);
 
 $(document).ready(function () {
-    
+
     // set's the clock.
     setInterval(updateClock, 1000);
 
@@ -13,13 +16,35 @@ $(document).ready(function () {
         // Creates the Indentation effect on click.
         $('#startButton').toggleClass('effect3dIn');
     });
+
     // hide's start menu once menu item is selected.
     $('#startMenuItems li a').click(function(e){
         $('#startMenu').hide();
         $('#startButton').toggleClass('effect3dIn');
     });
 
+    // Event Listener for Taskbar WindowButton.
+    $('#windowButton').on('click', function(){
+        $('#contentWindow').toggle();
+    });
 
+    // Event Listener for Taskbar WindowButton.
+    $('#windowMinimise').on('click', function(){
+        $('#contentWindow').toggle();
+    });
+
+    // Event Listener for Maximise Window.
+    $('#windowMaximise').on('click', function(){
+        // This stops it from working on Mobile.
+        if ($(window).width() > 600) {
+            $('#contentWindow').toggleClass('maximiseWindow');
+            $('#content').toggleClass('maximiseContent');
+            $('#contentWindowStatusBar').toggle();
+            $('#windowMaximise').toggleClass('windowRestore'); 
+        } else {
+            // Don't do it.
+        }
+    });
 
 });
 
