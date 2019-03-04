@@ -7,6 +7,9 @@ $(document).ready(function () {
     // set's the clock.
     setInterval(updateClock, 1000);
 
+    // set's the word count.
+    wordCount();
+
     // Hides start menu on load.
     $('#startMenu').hide();
     
@@ -30,6 +33,11 @@ $(document).ready(function () {
 
     // Event Listener for Taskbar WindowButton.
     $('#windowMinimise').on('click', function(){
+        $('#contentWindow').toggle();
+    });
+
+    // Event Listener for Taskbar WindowButton.
+    $('#windowClose').on('click', function(){
         $('#contentWindow').toggle();
     });
 
@@ -71,4 +79,12 @@ function updateClock() {
     var currentTimeString = currentHours + ":" + currentMinutes + " " + timeOfDay;
     // print clock js in div #clock.
     $("#clock").html(currentTimeString);
+}
+
+function wordCount() {
+    // gets everything inside the "p" tag, seperates it by the spaces and counts the words.
+    word_count = $("#content > p").html().split(" ").length;
+
+    // outputs the word count to the status bar.
+    $('#contentWindowStatusBar').html("Word Count: " + word_count);
 }
