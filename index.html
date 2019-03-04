@@ -13,7 +13,7 @@
 <body>
     <header id="taskBar">
         <a href="#" id="startButton" class="effect3dOut"><img src="img/start_button2.png" alt="Start" width="24px" height="24px">Start</a>
-        <nav id="startMenu" class="effect3dOut">
+        <nav id="startMenu">
             <h2 id="startMenuBanner">Windows 98</h2>
             <ul id="startMenuItems">
                 <li><a href="#">Week 01</a></li>
@@ -28,29 +28,34 @@
                 <li><a href="#">Week 10</a></li>
             </ul>
         </nav>
-        <a href="#" id="windowButton" class="effect3dOut">
+        <a href="#" id="windowButton">
             <img src="img/notepad_24px.png" alt="" style="margin-right: 8px;">Notepad
         </a>
-        <div id="systemTray" class="effect3dIn">
-            <img src="img/volume.png" alt="" height="24px" width="24px">
+        <div id="systemTray">
+            <img src="img/volume.png" alt="Sound On" height="24px" width="24px">
             <span id="clock">Time</span>
         </div>
     </header>
 
     <main>
-        <div id="contentWindow" class="effect3dOut">
+        <div id="contentWindow">
             
-            <div id="contentWindowHeader">
-                <img src="img/notepad_16px.png" alt="Notepad" style="width: 16px; height: 16px; margin-right: 8px;">Notepad
-                <div id="titleBarButtonGroup">
-                    <img src="img/icon-minimise.png" alt="Minimize" class="titleBarButtons effect3dOut">
-                    <img src="img/icon-maximise.png" alt="Maxmize" class="titleBarButtons effect3dOut">
-                    <img src="img/icon-close.png" alt="Close" class="titleBarButtons effect3dOut">
-                </div>
+            <div id="contentWindowTitleBar">
+                <img id="windowIcon" src="img/notepad_16px.png" alt="Notepad">
+                <div id="windowTitle">Notepad</div>
+                <ul id="titleBarButtonGroup">
+                    <li id="windowMinimise"><!--<img src="img/icon-minimise.png" alt="Minimize">--></li>
+                    <li id="windowMaximise"><!--<img src="img/icon-maximise.png" alt="Maxmize">--></li>
+                    <li id="windowClose"><!--<img src="img/icon-close.png" alt="Close">--></li>
+                </ul>
             </div>
 
-            <div id="contentWindowMenuBar">File&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;Help</div>
-            <div class="content effect3dIn">
+            <ul id="contentWindowMenuBar">
+                <li>File</li>
+                <li>Edit</li>
+                <li>Help</li>
+            </ul>
+            <div class="content">
                 <h1>Hello World!</h1>
                 <br>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorem pariatur aperiam debitis maiores neque excepturi quibusdam, perferendis adipisci harum nobis, repellat voluptatum minus, blanditiis quas quae distinctio temporibus ipsum.</p>
@@ -75,6 +80,7 @@
                 Nam in dolorum dolor magnam recusandae dolorem, illo dignissimos sit voluptas voluptatem error facilis itaque fugit quae quod totam repudiandae ab, id eveniet iure similique eius. Optio aspernatur corrupti quisquam?
                 Quaerat atque eius quo voluptates quisquam, pariatur excepturi magni sequi totam aliquam molestiae ipsum ea quia a sint, minus similique minima cum voluptas temporibus possimus quibusdam. Explicabo earum voluptas placeat!</p>
             </div>
+            <div id="contentWindowStatusBar">Testing</div>
         </div>
     </main>
 
